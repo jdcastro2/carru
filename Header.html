@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+    <title>Document</title>
+    
+</head>
+<style>
+    body{
+        margin: 0;
+        background-color: #8F57FD;
+        font-family: 'Mulish', sans-serif;  
+    }
+    .header{
+        background-color #8F57FD;
+        width: 100%;
+        height: 120px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header__img{
+        width: 150px;
+        height: 120px;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+    .header__ciudad{
+        color: white;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 45px;
+        margin-left: 900px;
+    }
+    .header__menu{
+        margin-right: 70px;
+        margin-top: 40px;
+    }
+    .header__menu ul{
+        display: none;
+        list-style: none;
+        padding: 0px;
+        position: absolute;
+        width: 100px;
+        text-align:right ;
+        margin: 80px 0px 0px -14px;
+    }
+    .header__menu:hover ul, ul:hover{
+        display: block;
+    }
+    .header__menu li {
+        margin-top: 10px;
+    }
+    .header__menu li a {
+        color: white;
+        text-decoration: none;
+    }
+    .header__menu li a:hover {
+        text-decoration:underline ;
+    }
+       .header__menu--profile{
+        margin-right: 8px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+    }
+    .header__menu--profile img{
+        margin: 3px;
+        width: 40px;
+        height: 40px;
+    }
+    .header__menu--profile p{
+        margin: 0px;
+        color: white;
+        margin-left: 5px;
+    }
+    .main {
+        height: 130px;
+        display:flex;
+        flex-flow: row wrap;
+        flex-direction: column;
+        align-items: center;
+        margin-top:100px;
+    }
+    .main__title{
+        color: white;
+        font-size: 25px;
+        display: flex;
+        justify-content: center;
+    }
+    .input{
+        border: 2px solid white;
+        border-radius: 25px;
+        width: 60%;
+        font-family: 'Mulish', sans-serif;
+        font-size: 16px;
+        height: 40px;
+        padding: 0px 20px;
+        background-color: #AB88FF;
+        outline: none;
+        color: white;
+        display: flex;
+        justify-content: flex-end;
+    }
+    ::placeholder{
+        color: white;
+    }
+
+    .carousel {
+        width: 100%;
+        overflow: scroll;
+        padding: 30px;
+        position: relative;
+        
+    }
+    .carousel__container{
+        white-space: nowrap;
+        margin: 70px 0px;
+        padding-bottom: 10px;
+        
+    }
+    .carousel-item{
+        background-color: aqua;
+        width: 200px;
+        height: 250px;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-right: 10px;
+        display: inline-block;
+        cursor: pointer;
+        transition: 450ms all   ;
+        transform-origin: center left;
+        position: relative;
+
+    }
+    .carousel-item:hover ~ .carousel-item{
+        transform: translate3d(100px,0,0);
+    }
+    .carousel__container:hover .carousel-item{
+        opacity: 0.3;
+        
+    }
+    .carousel__container:hover .carousel-item:hover{
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    .carousel-item__img{
+        width: 200px;
+        height: 250px;
+        object-fit: cover;
+    }
+    .carousel-item__details{
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%,  rgba(0, 0, 0, 0) 100% );
+        font-size: 8px;
+        opacity: 0;
+        transition: 450ms opacity;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .carousel-item__details:hover{
+        opacity: 1;
+    }
+    .carousel-item__details img{
+        width: 18px;
+        height: 18px;
+    }
+
+    .carousel-item__details p{
+        margin:2px 0px;
+        color: white;
+    }
+
+    .carousel-item__details--title{
+        font-size: 10px;
+    }
+    
+</style>
+<body>
+    <header class="header">
+        <img class="header__img" src="file:///C:/Users/jcastro.CNCCOL/Platzi/carru2.png" alt="carru">
+        <div class="header__ciudad">
+            <details>
+                <summary>
+                    Ciudad
+                </summary>
+                <ul>
+                    <li>Bogotá</li>
+                    <li>Medellín</li>
+                    <li>Barranquilla</li>
+                </ul>
+            </details>
+
+        </div>
+        <div class="header__menu">
+            <div class="header__menu--profile">
+                <img src="user-icon.png" alt="perfil">
+                <p>Perfil</p>
+                <ul>
+                    <li><a href="/">Cuenta</a></li>
+                    <li><a href="/">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    
+    <section class="main">
+        <h2 class="main__title">¿Qué tipo de vehículo buscas?</h2>
+        <input class="input" type="text" placeholder="Buscar..">
+    </section>
+
+    <section class="carousel">
+        <div class="carousel__container">
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://http2.mlstatic.com/renault-kwid-outsider-D_NQ_NP_904283-MCO32867399585_112019-F.webp" alt="Renault Kwid">
+                <div class="carousel-item__details">
+                    <div>
+                        <img src="https://img.icons8.com/color/48/000000/view-details.png" alt="Ver más">
+                    </div>
+                    <p class="carousel-item__details--title">Título Descriptivo</p>
+                    <p class="carousel-item__details--subtitle">Subtítulo Descriptivo</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://http2.mlstatic.com/honda-crv-5-dr-ex-lc-4x4-automatica-D_NQ_NP_819338-MCO43596053897_092020-F.webp" alt="Honda Crv-5">
+                <div class="carousel-item__details">
+                    <div>
+                        <img src="https://img.icons8.com/color/48/000000/view-details.png" alt="Ver más">
+                    </div>
+                    <p class="carousel-item__details--title">Título Descriptivo</p>
+                    <p class="carousel-item__details--subtitle">Subtítulo Descriptivo</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://http2.mlstatic.com/volkswagen-passat-highline-automatico-25-8-airbags-sunroof-D_NQ_NP_958751-MCO43298491895_082020-F.webp" alt="Volkswagen Passat Highline Automátic">
+                <div class="carousel-item__details">
+                    <div>
+                        <img src="https://img.icons8.com/color/48/000000/view-details.png" alt="Ver más">
+                    </div>
+                    <p class="carousel-item__details--title">Título Descriptivo</p>
+                    <p class="carousel-item__details--subtitle">Subtítulo Descriptivo</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://http2.mlstatic.com/mercedes-benz-glc220-disel-D_NQ_NP_876012-MCO40849740788_022020-F.webp" alt="Volkswagen Passat Highline Automátic">
+                <div class="carousel-item__details">
+                    <div>
+                        <img src="https://img.icons8.com/color/48/000000/view-details.png" alt="Ver más">
+                    </div>
+                    <p class="carousel-item__details--title">Título Descriptivo</p>
+                    <p class="carousel-item__details--subtitle">Subtítulo Descriptivo</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://http2.mlstatic.com/nissan-sentra-exclusive-tp-2015-D_NQ_NP_652020-MCO28998008465_122018-F.webp" alt="Volkswagen Passat Highline Automátic">
+                <div class="carousel-item__details">
+                    <div>
+                        <img src="https://img.icons8.com/color/48/000000/view-details.png" alt="Ver más">
+                    </div>
+                    <p class="carousel-item__details--title">Título Descriptivo</p>
+                    <p class="carousel-item__details--subtitle">Subtítulo Descriptivo</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://http2.mlstatic.com/bmw-m240i-m240-en-garantia-perfecto-estado-6500km-D_NQ_NP_745054-MCO43522636767_092020-F.webp" alt="Volkswagen Passat Highline Automátic">
+                <div class="carousel-item__details">
+                    <div>
+                        <img src="https://img.icons8.com/color/48/000000/view-details.png" alt="Ver más">
+                    </div>
+                    <p class="carousel-item__details--title">Título Descriptivo</p>
+                    <p class="carousel-item__details--subtitle">Subtítulo Descriptivo</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://http2.mlstatic.com/mazda-mazda-2-prime-mec-15-D_NQ_NP_947355-MCO43608393268_092020-F.webp" alt="Volkswagen Passat Highline Automátic">
+                <div class="carousel-item__details">
+                    <div>
+                        <img src="https://img.icons8.com/color/48/000000/view-details.png" alt="Ver más">
+                    </div>
+                    <p class="carousel-item__details--title">Título Descriptivo</p>
+                    <p class="carousel-item__details--subtitle">Subtítulo Descriptivo</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://http2.mlstatic.com/jeep-cherokee-limited-D_NQ_NP_766795-MCO43453962913_092020-F.webp" alt="Volkswagen Passat Highline Automátic">
+                <div class="carousel-item__details">
+                    <div>
+                        <img src="https://img.icons8.com/color/48/000000/view-details.png" alt="Ver más">
+                    </div>
+                    <p class="carousel-item__details--title">Título Descriptivo</p>
+                    <p class="carousel-item__details--subtitle">Subtítulo Descriptivo</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://http2.mlstatic.com/ford-fiesta-titanium-aut-sportback-D_NQ_NP_683159-MCO43542009204_092020-F.webp" alt="Volkswagen Passat Highline Automátic">
+                <div class="carousel-item__details">
+                    <div>
+                        <img src="https://img.icons8.com/color/48/000000/view-details.png" alt="Ver más">
+                    </div>
+                    <p class="carousel-item__details--title">Título Descriptivo</p>
+                    <p class="carousel-item__details--subtitle">Subtítulo Descriptivo</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://http2.mlstatic.com/hyundai-new-tucson-gl-premium-4x2-D_NQ_NP_623078-MCO43210347628_082020-F.webp" alt="Volkswagen Passat Highline Automátic">
+                <div class="carousel-item__details">
+                    <div>
+                        <img src="https://img.icons8.com/color/48/000000/view-details.png" alt="Ver más">
+                    </div>
+                    <p class="carousel-item__details--title">Título Descriptivo</p>
+                    <p class="carousel-item__details--subtitle">Subtítulo Descriptivo</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://http2.mlstatic.com/mini-cooper-s-20-t-aut-2020-D_NQ_NP_848356-MCO43276025473_082020-F.webp" alt="Mini Cooper S 2.0">
+                <div class="carousel-item__details">
+                    <div>
+                        <img src="https://img.icons8.com/color/48/000000/view-details.png" alt="Ver más">
+                    </div>
+                    <p class="carousel-item__details--title">Título Descriptivo</p>
+                    <p class="carousel-item__details--subtitle">Subtítulo Descriptivo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

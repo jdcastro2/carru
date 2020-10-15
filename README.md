@@ -1,3 +1,0 @@
-# carru
-
-Prueba 1
